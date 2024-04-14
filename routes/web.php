@@ -7,6 +7,8 @@ use App\Http\Controllers\BiltyController;
 use App\Http\Controllers\AssetsController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\ShopSaleController;
+use App\Http\Controllers\CashInputController;
 use App\Http\Controllers\SubAssistController;
 use App\Http\Controllers\AdminpannleController;
 
@@ -92,6 +94,24 @@ Route::middleware('auth:web')->group(function () {
 
 
 
+});
+
+
+Route::group(['prefix' => 'shopsale', 'as' => 'shopsale.', 'middleware' => 'auth:web'], function () {
+    Route::get('/', [ShopSaleController::class, 'index'])->name('index');
+    Route::get('create', [ShopSaleController::class, 'create'])->name('create');
+    Route::post('store', [ShopSaleController::class, 'store'])->name('store');
+    Route::get('edit/{id}', [ShopSaleController::class, 'edit'])->name('edit');
+    Route::put('update/{id}', [ShopSaleController::class, 'update'])->name('update');
+    Route::delete('delete/{id}', [ShopSaleController::class, 'delete'])->name('delete');
+});
+Route::group(['prefix' => 'cashinput', 'as' => 'cashinput.', 'middleware' => 'auth:web'], function () {
+    Route::get('/', [CashInputController::class, 'index'])->name('index');
+    Route::get('create', [CashInputController::class, 'create'])->name('create');
+    Route::post('store', [CashInputController::class, 'store'])->name('store');
+    Route::get('edit/{id}', [CashInputController::class, 'edit'])->name('edit');
+    Route::put('update/{id}', [CashInputController::class, 'update'])->name('update');
+    Route::delete('delete/{id}', [CashInputController::class, 'delete'])->name('delete');
 });
 
 Route::get("verification/verify", function () {

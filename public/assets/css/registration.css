@@ -415,3 +415,26 @@ a.nav-link {
     line-height: 0px;
 
 }
+
+
+
+
+        .card-header {
+            background-color: #007bff;
+            /* Bootstrap primary color */
+            color: #ffffff;
+            /* White text color */
+            font-size: 1.25rem;
+            /* Larger font size */
+            text-align: center !important;
+            /* Center-align the text */
+            border-bottom: none;
+            /* Optional: removes the border */
+            padding: 1rem 0.5rem;
+            /* Adjusts the padding */
+            border-radius: 0.375rem 0.375rem 0 0;
+            /* Rounded corners at the top */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* Adds a subtle shadow (optional) */
+        }
+
