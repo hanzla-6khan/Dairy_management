@@ -73,10 +73,25 @@ Route::middleware('auth:web')->group(function () {
     Route::get('/sub_assets_item', [SubAssistController::class, 'index'])->name('suba_ssets_item.index');
 
     Route::post('/sub_assets_item/store', [SubAssistController::class, 'store'])->name('sub_assets_item.store');
-    
 
 
-    Route::resource('bilties', BiltyController::class);
+    Route::get('/bilties', [BiltyController::class, 'index'])->name('bilties.index');
+    Route::get('/bilties/create', [BiltyController::class, 'create'])->name('bilties.create');
+
+    Route::post('/bilties', [BiltyController::class, 'store'])->name('bilties.store');
+
+    Route::put('/bilties/{bilties}', [BiltyController::class, 'update'])->name('bilties.update');
+    Route::get('/bilties/show', [BiltyController::class, 'show'])->name('bilties.show');
+    Route::get('/bilties/{id}/edit', [BiltyController::class, 'edit'])->name('bilties.edit');
+    Route::delete('/bilties/{id}', [BiltyController::class, 'destroy'])->name('bilties.destroy');
+
+
+
+
+
+
+
+
 });
 
 Route::get("verification/verify", function () {

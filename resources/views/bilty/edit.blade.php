@@ -37,12 +37,152 @@
 
 
         <div class="card">
-            <div class="card-header d-flex justify-content-center">Create Assets</div>
+            <div class="card-header d-flex justify-content-center">Edit and Update  </div>
 
             <div class="card-body">
 
+
+              <form class="needs-validation" novalidate action="{{ route('bilties.update', $bilty->id) }}" method="POST">
+    @csrf
+    @method('PUT')
+                    <div class="row">
+                        <!-- Search Customer -->
+                        <div class="col-md-4 mb-3">
+                            <label for="searchCustomer">Search Customer</label>
+                            <input type="text" class="form-control" name="customer" id="searchCustomer" placeholder="Customer" value="{{ $bilty->customer }}" required>
+                            <div class="invalid-feedback">
+                                Please enter a customer.
+                            </div>
+                        </div>
+
+                        <!-- Items Select -->
+                        <div class="col-md-4 mb-3">
+                            <label for="itemSelect">Items</label>
+                            <select class="form-control" name="item"  id="itemSelect" required>
+                                <option selected  value="{{ $bilty->item }}">{{ $bilty->item }}</option>
+                                <option>Item 1</option>
+                                <option>Item 2</option>
+                                <!-- Add more items as needed -->
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select an item.
+                            </div>
+                        </div>
+
+                        <!-- Track No -->
+                        <div class="col-md-4 mb-3">
+                            <label for="trackNo">Track No</label>
+                            <input type="text" class="form-control"  name="track_no" value="{{ $bilty->track_no }}" id="trackNo" placeholder="Track No" required>
+                            <div class="invalid-feedback">
+                                Please provide a track number.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Track Read -->
+                        <div class="col-md-4 mb-3">
+                            <label for="trackRead">Track Read</label>
+                            <input type="text" class="form-control" value="{{ $bilty->track_read }}" name="track_read" id="trackRead" placeholder="Track Read" required>
+                            <div class="invalid-feedback">
+                                Please enter track read.
+                            </div>
+                        </div>
+
+                        <!-- Factory -->
+                        <div class="col-md-4 mb-3">
+                            <label for="factory">Factory</label>
+                            <input type="text" class="form-control" value="{{ $bilty->factory }}" name="factory" id="factory" placeholder="Factory" required>
+                            <div class="invalid-feedback">
+                                Please provide a factory.
+                            </div>
+                        </div>
+
+                        <!-- Quantity -->
+                        <div class="col-md-4 mb-3">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" class="form-control" value="{{ $bilty->quantity }}" name="quantity" id="quantity" placeholder="Quantity" required>
+                            <div class="invalid-feedback">
+                                Please enter a quantity.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Cost per Package -->
+                        <div class="col-md-4 mb-3">
+                            <label for="costPackage">Cost/Package</label>
+                            <input type="number" class="form-control" name="costPackage" value="{{ $bilty->costPackage }}"  id="costPackage" placeholder="Cost per Package"
+                                required>
+                            <div class="invalid-feedback">
+                                Please enter cost per package.
+                            </div>
+                        </div>
+
+                        <!-- Total Cost -->
+                        <div class="col-md-4 mb-3">
+                            <label for="totalCost">Total Cost</label>
+                            <input type="number" class="form-control" value="{{ $bilty->totalCost }}" name="totalCost" id="totalCost" placeholder="Total Cost" required>
+                            <div class="invalid-feedback">
+                                Please enter total cost.
+                            </div>
+                        </div>
+
+                        <!-- Pre Balance -->
+                        <div class="col-md-4 mb-3">
+                            <label for="preBalance">Pre Balance</label>
+                            <input type="number" class="form-control" value="{{ $bilty->preBalance }}" name="preBalance" id="preBalance" placeholder="Previous Balance"
+                                required>
+                            <div class="invalid-feedback">
+                                Please enter previous balance.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Payment -->
+                        <div class="col-md-4 mb-3">
+                            <label for="payment">Payment</label>
+                            <input type="number" class="form-control"  value="{{ $bilty->payment }}"  name="payment" id="payment" placeholder="Payment" required>
+                            <div class="invalid-feedback">
+                                Please enter payment amount.
+                            </div>
+                        </div>
+
+                        <!-- Now Balance -->
+                        <div class="col-md-4 mb-3">
+                            <label for="nowBalance">Now Balance</label>
+                            <input type="number" class="form-control" id="now_balance" value="{{ $bilty->now_balance }}" name="now_balance" placeholder="Current Balance"
+                                required>
+                            <div class="invalid-feedback">
+                                Please enter current balance.
+                            </div>
+                        </div>
+
+                        <!-- Remarks -->
+                        <div class="col-md-4 mb-3">
+                            <label for="remarks">Remarks</label>
+                            <input type="text" class="form-control" value="{{ $bilty->remarks }}" name="remarks" id="remarks" placeholder="Remarks">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-control " placeholder="enter sms" value="{{ $bilty->sms_notification }}"  name="sms_notification" type="text" id="sms_notification" required>
+
+                            <div class="invalid-feedback">
+                                You must agree before submitting.
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </form>
             </div>
-        </div> <a class="btn btn-primary ml-auto" href="/home"> back to Home</a>
+
+        </div>
+    </div>
+    </div> <a class="btn btn-primary ml-auto" href="/home"> back to Home</a>
     </div>
     </div>
     </div>

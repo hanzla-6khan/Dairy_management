@@ -47,17 +47,7 @@ class CustomerController extends Controller
             'sub_asset_id' => 'required|string',
 
         ]);
-
-
-
-
-
-
-
         $customer = Customer::create($request->except('_token'));
-
-
-
         return redirect()->route('customers.index')->with('success', 'Customer created successfully!');
     }
 

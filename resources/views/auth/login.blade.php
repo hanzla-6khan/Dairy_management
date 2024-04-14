@@ -18,7 +18,7 @@
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
-                <input type="password" placeholder="Valid Password " id="password"
+                <input type="password" placeholder="Valid Password " value="12345678" id="password"
                     class="form-control input @error('password') is-invalid @enderror" name="password" required
                     autocomplete="current-password">
                 <div class="col-md-8 offset-md-4">
