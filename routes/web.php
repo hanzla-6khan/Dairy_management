@@ -73,7 +73,7 @@ Route::middleware('auth:web')->group(function () {
     Route::get('/sub_assets_item', [SubAssistController::class, 'index'])->name('suba_ssets_item.index');
 
     Route::post('/sub_assets_item/store', [SubAssistController::class, 'store'])->name('sub_assets_item.store');
-    // ggggggggggggggggggggggggggg/   
+    
 
 
     Route::resource('bilties', BiltyController::class);
